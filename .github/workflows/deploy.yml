@@ -30,6 +30,8 @@ jobs:
       - name: Debug
         run: |
           ls
+          cd artifacts
+          ls
 
       - name: Upload wheel as artifact
         uses: actions/upload-artifact@master
