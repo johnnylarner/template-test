@@ -25,6 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel
           python setup.py sdist bdist_wheel
+          mkdir  $ARTIFACTS_PATH/dist
           mv dist/ $ARTIFACTS_PATH/dist
 
       - name: Debug
