@@ -12,7 +12,16 @@ env:
   PACKAGE_NAME: my_project
   ARTIFACTS_PATH: artifacts
 
+
+
 jobs:
+  push_to_registry:
+    name: Push image to private docker repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v3
+
   build:
     name: Build package
     runs-on: ubuntu:latest
