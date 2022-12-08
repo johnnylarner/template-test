@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu:latest
 
     steps:
-      - uses: actions/checkout@latest
+      - name: Checkout
+        uses: actions/checkout@latest
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
