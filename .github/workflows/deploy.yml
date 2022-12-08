@@ -37,6 +37,9 @@ jobs:
           cd artifacts
           echo artifacts
           ls
+          cd dist
+          echo dist
+          ls
 
       - name: Upload wheel as artifact
         uses: actions/upload-artifact@master
