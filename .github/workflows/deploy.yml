@@ -55,6 +55,8 @@ jobs:
       
       - name: Run unit tests
         run: |
+          conda info
+          conda list
           source activate venv
           pip install dist/my_project-*.whl
           pytest tests
