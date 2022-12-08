@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name:  $PACKAGE_NAME-package
-          path: "$ARTIFACTS_PATH/dist/$PACKAGE_NAME-*.whl"
+          path: `"$ARTIFACTS_PATH/dist/$PACKAGE_NAME-*.whl"`
   
   test-unit:
     needs: [build]
