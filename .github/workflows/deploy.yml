@@ -25,16 +25,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel
           python setup.py sdist bdist_wheel
-          ls
           mkdir $ARTIFACTS_PATH $ARTIFACTS_PATH/dist
-          ls
           mv dist $ARTIFACTS_PATH
 
       - name: Upload wheel as artifact
         uses: actions/upload-artifact@master
         with:
           name:  my_project-package
-          path: artifacts/dist/**.whl
+          path: artifacts/dist/my_project-**.whl
   
   test-unit:
     needs: [build]
@@ -53,7 +51,6 @@ jobs:
         with:
           activate-environment: venv
           environment-file: environment-dev.yml
-          python-version: 3.10
           auto-activate-base: false
       
       - name: Run unit tests
