@@ -2,8 +2,7 @@ name: Build and deploy the advent bot
 
 on:
   push:
-    branches:
-      - main
+
 
 jobs:
   push_to_registry:
