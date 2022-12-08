@@ -32,8 +32,10 @@ jobs:
 
       - name: Debug
         run: |
+          echo Root
           ls
           cd artifacts
+          echo artifacts
           ls
 
       - name: Upload wheel as artifact
