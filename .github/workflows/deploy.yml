@@ -1,16 +1,9 @@
-name: Deploy my package
+name: Build and deploy the advent bot
 
 on:
   push:
     branches:
-      - "master"
-      - "features/**"
-      - "improvements/**"
-      - "bug-fixes/**"
-  
-env:
-  PACKAGE_NAME: my_project
-  ARTIFACTS_PATH: artifacts
+      - main
 
 jobs:
   push_to_registry:
@@ -19,6 +12,7 @@ jobs:
     steps:
       - name: Check out this repository
         uses: actions/checkout@v3
+
 
       - name: Checkout
         uses: actions/checkout@v3
