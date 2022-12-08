@@ -28,7 +28,7 @@ jobs:
           ls
           mkdir $ARTIFACTS_PATH $ARTIFACTS_PATH/dist
           ls
-          mv dist/ $ARTIFACTS_PATH/dist
+          mv dist $ARTIFACTS_PATH/dist
 
       - name: Debug
         run: |
