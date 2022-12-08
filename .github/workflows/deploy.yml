@@ -52,10 +52,10 @@ jobs:
           activate-environment: venv
           environment-file: environment-dev.yml
           auto-activate-base: false
-      
+      - name: Initialise conda
+        run: conda init bash
       - name: Run unit tests
         run: |
-          conda init bash
           conda activate venv
           pip install dist/my_project-*.whl
           pytest tests
