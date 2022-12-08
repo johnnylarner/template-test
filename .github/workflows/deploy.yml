@@ -30,21 +30,6 @@ jobs:
           ls
           mv dist $ARTIFACTS_PATH
 
-      - name: Debug
-        run: |
-          echo Root
-          ls
-          cd artifacts
-          echo artifacts
-          ls
-          cd dist
-          echo in dist
-          ls
-          cd dist
-          echo in dist in dist
-          ls
-
-
       - name: Upload wheel as artifact
         uses: actions/upload-artifact@master
         with:
