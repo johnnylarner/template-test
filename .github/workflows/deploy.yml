@@ -57,7 +57,7 @@ jobs:
         run: |
           conda info
           conda list
-          source activate venv
+          conda activate venv
           pip install dist/my_project-*.whl
           pytest tests
       
