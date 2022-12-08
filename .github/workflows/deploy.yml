@@ -26,9 +26,9 @@ jobs:
           pip install setuptools wheel
           python setup.py sdist bdist_wheel
           ls
-          mkdir $ARTIFACTS_PATH $ARTIFACTS_PATH
+          mkdir $ARTIFACTS_PATH $ARTIFACTS_PATH/dist
           ls
-          mv dist $ARTIFACTS_PATH/dist
+          mv dist $ARTIFACTS_PATH
 
       - name: Debug
         run: |
