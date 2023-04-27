@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.9'
 
       - name: Build wheel
         run: |
@@ -46,14 +46,18 @@ jobs:
         with:
           name: my_project-package
           path: dist/
+
       - name: Set up miniconda
         uses: conda-incubator/setup-miniconda@v2.2.0
         with:
-          activate-environment: venv
-          environment-file: environment-dev.yml
-          auto-activate-base: false
-      - name: Initialise conda
-        run: conda init bash
+          miniconda-version: latest
+          python-version: 3.8
+        
+      - name: Create Conda Environment
+        run: |
+          conda env create -f environment-dev.yml
+          conda activate myenv
+
       - name: Run unit tests
         run: |
           conda activate venv
