@@ -51,17 +51,18 @@ jobs:
         shell: bash -el {0}
         run: conda info
 
-      - name: Set up miniconda
-        uses: conda-incubator/setup-miniconda@v2.2.0
-        with:
-          environment-file: environment-dev.yml
-          activate-environment: venv
+      # - name: Set up miniconda
+      #   uses: conda-incubator/setup-miniconda@v2.2.0
+      #   with:
+      #     environment-file: environment-dev.yml
+      #     activate-environment: venv
 
-      - name: Conda info 2
+      - name: Conda init
         shell: bash -el {0}
-        run: conda info
+        run: conda init bash
 
       - name: Run unit tests
+        shell: bash -el {0}
         run: |
           conda activate venv
           pip install dist/my_project-*.whl
