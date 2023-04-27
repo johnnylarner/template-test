@@ -48,15 +48,10 @@ jobs:
           path: dist/
 
       - name: Set up miniconda
-        uses: conda-incubator/setup-miniconda@v2.2.0
+        uses: conda-incubator/setup-miniconda@v2.2
         with:
-          miniconda-version: latest
-          python-version: 3.8
-        
-      - name: Create Conda Environment
-        run: |
-          conda env create -p $HOME/myenv -f environment-dev.yml
-          conda activate $HOME/myenv
+          environment-file: environment-dev.yml
+          activate-environment: venv
 
       - name: Run unit tests
         run: |
