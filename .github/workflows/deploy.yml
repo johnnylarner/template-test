@@ -47,11 +47,19 @@ jobs:
           name: my_project-package
           path: dist/
 
+      - name: Conda info 1
+        shell: bash -el {0}
+        run: conda info
+
       - name: Set up miniconda
         uses: conda-incubator/setup-miniconda@v2.2.0
         with:
           environment-file: environment-dev.yml
           activate-environment: venv
+
+      - name: Conda info 2
+        shell: bash -el {0}
+        run: conda info
 
       - name: Run unit tests
         run: |
