@@ -55,8 +55,8 @@ jobs:
         
       - name: Create Conda Environment
         run: |
-          conda env create -f environment-dev.yml
-          conda activate myenv
+          conda env create -p $HOME/myenv -f environment-dev.yml
+          conda activate $HOME/myenv
 
       - name: Run unit tests
         run: |
