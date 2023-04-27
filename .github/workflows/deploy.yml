@@ -48,7 +48,7 @@ jobs:
           path: dist/
 
       - name: Set up miniconda
-        uses: conda-incubator/setup-miniconda@v2.2
+        uses: conda-incubator/setup-miniconda@v2.2.0
         with:
           environment-file: environment-dev.yml
           activate-environment: venv
